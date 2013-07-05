@@ -1,0 +1,5 @@
+
+class Checker:
+	"""Grid Validator"""
+	
+	
