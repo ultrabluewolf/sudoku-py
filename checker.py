@@ -11,8 +11,8 @@ def is_valid(grid):
 
 def is_valid_rows(grid):
 	result=False
-	for i in (0..Grid.MAX):
-		
+	for i in range(grid.MAX):
+		False
 	return result
 
 def is_valid_cols(grid):
