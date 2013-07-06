@@ -9,6 +9,21 @@ def is_valid(grid):
 				return True
 	return False
 
+def is_valid_row(grid,row):
+	 result=True
+	 found=set()
+	 for col in range(grid.MAX):
+		if not grid[row][col] in found:
+			found.add(grid[row][col])
+		else:
+			result = False
+			break
+	 return result
+
+def is_valid_col(grid,col):
+	result=True
+	return result
+
 def is_valid_rows(grid):
 	result=True
 	for row in range(grid.MAX):

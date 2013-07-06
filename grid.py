@@ -3,9 +3,12 @@ class Grid:
 	"""Sudoku Grid"""
 	MAX=9
 	def __init__(self,gen):
-		self.grid = []#gen.create
-		for i in range(Grid.MAX):
-			self.grid.append([])
+		if gen is None:
+			self.grid = []
+			for i in range(Grid.MAX):
+				self.grid.append([])
+		else:
+			self.grid = gen.create()
 		
 	def __getitem__(self,i):
 		return self.grid[i]
