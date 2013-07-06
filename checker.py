@@ -30,23 +30,27 @@ def is_valid_col(grid,col):
 			result = False
 			break
 	return result
-"""
-012|345|678
-1..|...|...
-2..|...|...
------------
-3..|...|...
-4..|...|...
-5..|...|...
------------
-6..|...|...
-7..|...|...
-8..|...|...
-"""
+
 def is_valid_block(grid,block):
+	BOUND=3
 	result=True
 	found=set()
-	
+	#find upper left corner of block
+	row_ul=0
+	if block >= 6:
+		row_ul=6
+	elif block >= 3:
+		row_ul=3
+	col_ul=(block-row_ul)*3
+	#print str(block) + ':' + str(row) +','+ str(col)
+	for row in range(row_ul,row_ul+BOUND):
+		for col in range(col_ul,col_ul+BOUND):
+			#print '('+str(row)+','+str(col)+')'
+			if not grid[row][col] in found:
+				found.add(grid[row][col])
+			else:
+				result=False
+				return result
 	return result
 	
 def is_valid_rows(grid):
