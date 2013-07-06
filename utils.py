@@ -25,7 +25,7 @@ def readGridInput(fname):
 						row+=1
 						col=0
 					else:
-						print "LIM Reached!"
+						#print "LIM Reached!"
 						grids.append(Grid(None))
 						grids_idx+=1
 						row=0
