@@ -6,7 +6,7 @@ class Grid:
 		self.grid = []#gen.create
 		for i in range(Grid.MAX):
 			self.grid.append([])
-		print self.grid
+		
 	def __getitem__(self,i):
 		return self.grid[i]
 	def __setitem__(self,i,val):
