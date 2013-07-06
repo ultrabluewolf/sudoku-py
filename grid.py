@@ -15,10 +15,7 @@ class Grid:
 	def __str__(self):
 		str = ''
 		for row in range(Grid.MAX):
-			#print 'row'+row.__str__()
 			for col in range(Grid.MAX):
-				#print 'col'+col.__str__()
-				#print(self.grid[row][col]).__str__()
 				str += (self.grid[row][col]).__str__()
 				if col > 0 and col < Grid.MAX-1 and (col+1)%3==0:
 					str += "|"

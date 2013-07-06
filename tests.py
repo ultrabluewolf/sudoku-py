@@ -27,3 +27,4 @@ with open('input','r') as file:
 				else:
 					print "LIM Reached!"
 print str(g)
+print checker.is_valid(g)
