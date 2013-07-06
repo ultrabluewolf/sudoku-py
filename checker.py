@@ -72,4 +72,11 @@ def is_valid_cols(grid):
 #TODO: is a block check required??
 def is_valid_blocks(grid):
 	return True
+	"""
+	for block in range(grid.MAX):
+		result = is_valid_block(grid,block)
+		if not result
+			break
+	return result
+	"""
 
