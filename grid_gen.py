@@ -1,4 +1,5 @@
 import grid,checker
+from grid import *
 
 class GridGen:
 	"""Sudoku Grid Generator
