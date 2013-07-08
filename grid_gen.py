@@ -14,6 +14,7 @@ class GridGen:
 		g=Grid(None)
 		return g
 	
+	"""
 	def gen_randomized_soln(self):
 		for row in grid.MAX:
 			usedNums=set()
@@ -21,6 +22,6 @@ class GridGen:
 				num = rand...
 				if not num in usedNums:
 					usedNums.add(num)
-						
+	"""
 				
 	
