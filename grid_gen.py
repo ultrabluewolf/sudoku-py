@@ -14,3 +14,13 @@ class GridGen:
 		g=Grid(None)
 		return g
 	
+	def gen_randomized_soln(self):
+		for row in grid.MAX:
+			usedNums=set()
+			for col in grid.MAX:
+				num = rand...
+				if not num in usedNums:
+					usedNums.add(num)
+						
+				
+	
