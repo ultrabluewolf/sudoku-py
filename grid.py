@@ -10,6 +10,14 @@ class Grid:
 		else:
 			self.grid = gen.create()
 		
+	def pad(self):
+		for row in range(Grid.MAX):
+			if len(self.grid[row]) != 0:
+				return
+			else:
+				for col in range(Grid.MAX):
+					self.grid[row].append(0)
+	
 	def __getitem__(self,i):
 		return self.grid[i]
 	def __setitem__(self,i,val):
