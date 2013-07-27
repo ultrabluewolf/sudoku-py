@@ -3,13 +3,21 @@ import grid
 from grid import *
 	
 def is_valid(grid):
-	if is_valid_rows(grid):
-		if is_valid_cols(grid):
-			if is_valid_blocks(grid):
+	if is_valid_rows(grid,true):
+		if is_valid_cols(grid,true):
+			if is_valid_blocks(grid,true):
 				return True
 	return False
 
-def is_valid_row(grid,row):
+def is_valid_not_full(grid):
+	if is_valid_rows(grid,false):
+		if is_valid_cols(grid,false):
+			if is_valid_blocks(grid,false):
+				return True
+	return False
+
+#TODO: utilize is_full flag
+def is_valid_row(grid,row,is_full):
 	result=True
 	found=set()
 	for col in range(grid.MAX):
@@ -20,7 +28,8 @@ def is_valid_row(grid,row):
 			break
 	return result
 
-def is_valid_col(grid,col):
+#TODO: utilize is_full flag
+def is_valid_col(grid,col,is_full):
 	result=True
 	found=set()
 	for row in range(grid.MAX):
@@ -31,7 +40,8 @@ def is_valid_col(grid,col):
 			break
 	return result
 
-def is_valid_block(grid,block):
+#TODO: utilize is_full flag
+def is_valid_block(grid,block,is_full):
 	BOUND=3
 	result=True
 	found=set()
