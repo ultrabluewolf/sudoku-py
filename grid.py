@@ -2,6 +2,7 @@
 class Grid:
 	"""Sudoku Grid"""
 	MAX=9
+	EMPTY=0
 	def __init__(self,gen):
 		if gen is None:
 			self.grid = []
