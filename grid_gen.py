@@ -1,4 +1,5 @@
-import grid,checker
+import grid,checker,random
+from random import *
 from grid import *
 
 class GridGen:
@@ -13,20 +14,33 @@ class GridGen:
 	
 	def create(self):
 		g=Grid(None)
+		self.gen_randomized_soln(g)
+		self.poke_holes(g)
 		return g
 	
 	"""takes randomized solution and clears numbers depending on difficulty selected"""
-	def poke_holes(self):
+	def poke_holes(self,grid):
 		pass
 	
-	def gen_randomized_soln(self):
+	def gen_randomized_soln(self,grid):
 		self.rand.seed()
-		for row in grid.MAX:
-			usedNums=set()
-			for col in grid.MAX:
-				num = self.rand.randint(1,grid.MAX)
-				if not num in usedNums:
-					usedNums.add(num)
-					
-				
+		grid.pad()
+		#is_not_valid=True
+		#while is_not_valid:
+		for row in range(Grid.MAX):
+			#usedNums=set()
+			#for col in range(Grid.MAX):
+			col=0
+			while col < Grid.MAX:
+				is_not_valid = True
+				while is_not_valid:
+					num = self.rand.randint(1,Grid.MAX)
+					grid[row][col] = num
+					is_not_valid = not checker.is_valid_not_full(grid)
+				#if not num in usedNums:
+					#print str(row) + "," + str(col)
+					#usedNums.add(num)
+					#grid[row][col]=num
+					#col+=1
+			#is_not_valid = not checker.is_valid(grid)
 	
