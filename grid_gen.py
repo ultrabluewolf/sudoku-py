@@ -36,7 +36,11 @@ class GridGen:
 				while is_not_valid:
 					num = self.rand.randint(1,Grid.MAX)
 					grid[row][col] = num
-					is_not_valid = not checker.is_valid_not_full(grid)
+					print str(row) + "," + str(col) + "; " + str(num)
+					print str(grid)
+					#is_not_valid = not checker.is_valid_not_full(grid)
+					is_not_valid = (not checker.is_valid_row(grid,row,False)) or (not checker.is_valid_col(grid,col,False))
+				col+=1
 				#if not num in usedNums:
 					#print str(row) + "," + str(col)
 					#usedNums.add(num)

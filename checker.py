@@ -3,16 +3,16 @@ import grid
 from grid import *
 	
 def is_valid(grid):
-	if is_valid_rows(grid,true):
-		if is_valid_cols(grid,true):
-			if is_valid_blocks(grid,true):
+	if is_valid_rows(grid,True):
+		if is_valid_cols(grid,True):
+			if is_valid_blocks(grid,True):
 				return True
 	return False
 
 def is_valid_not_full(grid):
-	if is_valid_rows(grid,false):
-		if is_valid_cols(grid,false):
-			if is_valid_blocks(grid,false):
+	if is_valid_rows(grid,False):
+		if is_valid_cols(grid,False):
+			if is_valid_blocks(grid,False):
 				return True
 	return False
 
@@ -21,7 +21,9 @@ def is_valid_row(grid,row,is_full):
 	result=True
 	found=set()
 	for col in range(grid.MAX):
-		if not grid[row][col] in found:
+		if (not is_full) and (grid[row][col] == Grid.EMPTY):
+			continue
+		elif (not grid[row][col] in found):
 			found.add(grid[row][col])
 		else:
 			result = False
@@ -33,7 +35,9 @@ def is_valid_col(grid,col,is_full):
 	result=True
 	found=set()
 	for row in range(grid.MAX):
-		if not grid[row][col] in found:
+		if (not is_full) and (grid[row][col] == Grid.EMPTY):
+			continue
+		elif (not grid[row][col] in found):
 			found.add(grid[row][col])
 		else:
 			result = False
@@ -63,28 +67,28 @@ def is_valid_block(grid,block,is_full):
 				return result
 	return result
 	
-def is_valid_rows(grid):
+def is_valid_rows(grid,is_full):
 	result=True
 	for row in range(grid.MAX):
-		result = is_valid_row(grid,row)
+		result = is_valid_row(grid,row,is_full)
 		if not result:
 			break
 	return result
 
-def is_valid_cols(grid):
+def is_valid_cols(grid,is_full):
 	result=True
 	for col in range(grid.MAX):
-		result = is_valid_col(grid,col)
+		result = is_valid_col(grid,col,is_full)
 		if not result:
 			break
 	return result
 
 #TODO: is a block check required??
-def is_valid_blocks(grid):
+def is_valid_blocks(grid,is_full):
 	return True
 	"""
 	for block in range(grid.MAX):
-		result = is_valid_block(grid,block)
+		result = is_valid_block(grid,block,is_full)
 		if not result
 			break
 	return result
