@@ -2,6 +2,7 @@
 
 import engine, checker, grid, grid_gen, utils
 from grid import *
+from grid_gen import *
 
 if False:
 	grids=utils.readGridInput('input')
@@ -10,5 +11,6 @@ if False:
 		print checker.is_valid(grids[i])
 
 if True:
-	grids=GridGen(1).create()
-	
+	grid=GridGen(1).create()
+	print str(grid)
+	print checker.is_valid(grid)
